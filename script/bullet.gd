@@ -12,3 +12,4 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	position -= Vector2(0,1) * speed * delta
+	
