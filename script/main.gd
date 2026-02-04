@@ -1,12 +1,14 @@
 extends Node2D
 
 var player_scene = preload("res://scene/player.tscn")
+var enemy_scene = preload("res://scene/enemy.tscn")
 var screen_size = Vector2()
 var player_size = Vector2()
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	add_player()
+	add_enemy()
 
 
 func _process(delta: float) -> void:
@@ -21,3 +23,10 @@ func add_player():
 	player.position.x = x
 	player.position.y = y
 	add_child(player)
+
+func add_enemy():
+	var enemy = enemy_scene.instantiate()
+	enemy.position.x = 100
+	enemy.position.y = 100
+	
+	add_child(enemy)
